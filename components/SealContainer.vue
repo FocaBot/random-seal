@@ -1,5 +1,5 @@
 <template>
-  <img id="seal-container" :src="seal"></img>
+  <img id="seal-container" :src="seal" v-on:load="updateGradient"></img>
 </template>
 <style lang="stylus">
   #seal-container
