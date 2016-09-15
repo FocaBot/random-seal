@@ -1,5 +1,5 @@
 <template>
-  <img id="seal-container" :src="seal" v-on:load="updateGradient"></img>
+  <img id="seal-container" v-on:load="updateGradient" :src="seal"></img>
 </template>
 <style lang="stylus">
   #seal-container
@@ -19,11 +19,12 @@
     },
     methods: {
       updateGradient() {
-        try {
-          Grade(document.body, '#seal-container');
-        } catch(e) {
-
-        }
+        // hacks
+        setTimeout(()=> {
+          try {
+            Grade(document.body, '#seal-container');
+          } catch(e) { }
+        }, 100);
       },
     },
     ready() {
